@@ -1,0 +1,21 @@
+strong{
+    color: rgb(198, 184, 58);
+}
+h1,h2{
+    color: rgb(64, 146, 247);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+h2{
+    font-size: 3vh;
+    font-weight: bolder;
+}
+body{
+    background-color: rgb(235, 234, 234);
+}
+
+ul,ol{
+    font-family: 'Courier New', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2vh;
+}
+
