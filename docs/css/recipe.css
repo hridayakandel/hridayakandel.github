@@ -39,6 +39,7 @@ blockquote{
 
 pre.preFormattedText{
     font-family:monospace;
+    text-align: right;
 }
 
 ul.noBullet{
@@ -46,4 +47,8 @@ ul.noBullet{
     list-style-image: none;
     margin: 0;
     padding: 0;
+}
+
+div.validator{
+    text-align: right;
 }
