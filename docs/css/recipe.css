@@ -1,0 +1,26 @@
+body{
+    background-color: white;
+    color: #404040;
+    font-size: 11pt;
+    font-family: Georgia,Garamond,sans-serif;
+}
+a{
+    color: #A4A400;
+}
+h1{
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    font-size: 18pt;
+    font-style: normal;
+    text-align: left;
+    text-decoration: underline;
+}
+h1.mainHeading{
+    text-align: center;
+    font-size: 22pt;
+}
+
+pre.preFormattedText{
+    font-family:monospace;
+}

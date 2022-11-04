@@ -58,6 +58,10 @@ h4{
     text-decoration: underline;
 }
 
+/*selector:pseudo-class {
+    property: value;
+}*/
+
 a:link {
     text-decoration: none;
 }
@@ -70,9 +74,19 @@ a:hover {
 a:active {
     color: darkgreen;
 }
+
+/* selector::pseudo-element {
+    property: value;
+} */
+
 p.mainPara::first-letter{
     font-size: 1.5em;
 }
+
+/* selector1>selector2 {
+    properties
+}
+• Applies the given properties to selector2 only if it is direct child of selector1 (in the DOM) */
 
 dl>dt{
     color: chocolate;
