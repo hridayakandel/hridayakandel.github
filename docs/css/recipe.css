@@ -34,6 +34,7 @@ ul {
 }
 blockquote{
     background-color: #fcfc93;
+    font-style: italic;
 }
 
 pre.preFormattedText{
