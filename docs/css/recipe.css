@@ -24,3 +24,9 @@ h1.mainHeading{
 pre.preFormattedText{
     font-family:monospace;
 }
+
+ul.descUL{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
