@@ -1,5 +1,5 @@
 // // app.js -- hello world example
-"use strict";
+//"use strict";
 // console.log('Hello JavaScript')
 
 // var address = {
@@ -170,27 +170,48 @@
 // f();
 
 
-x = 10;
-y = 10;
-function main() {
-    console.log("<br>x1 is " + x);
-    x = 20;
-    console.log("<br>x2 is " + x);
-    if (x > 0) {
-        console.log("<br>x3 is " + x);
-        var x = 10; // x=30; 
-        console.log("<br>x333 is " + x);
-    }
-    console.log("<br>x4 is " + x);
-    var x = 40; // x=40; 
-    var f = function (x) {
-        console.log("<br>x5 is " + x);
-    }
-    f(50);
-    console.log("<br>x6 is " + x);
+// var x = 10;
+
+// function main() {
+//     console.log("<br>x1 is " + x);
+//     x = 20;
+//     console.log("<br>x2 is " + x);
+//     if (x > 0) {
+//         console.log("<br>x3 is " + x);
+//         x = 10; // x=30; 
+//         console.log("<br>x333 is " + x);
+//     }
+//     console.log("<br>x4 is " + x);
+//     x = 40; // x=40; 
+//     function f()
+//         x = 5;
+//         console.log("<br>x5 is " + x);
+//     }
+//     f();
+//     console.log("<br>x6 is " + x);
 
 
+// }
+// main();
+// console.log("<br>x7 is " + x);
+
+x = 1;
+var a = 5;
+var b = 10;
+var c = function (a, b, c) {
+    console.log(x);
+    console.log(a);
+    var f = function (a, b, c) {
+        b = a;
+        console.log(b);
+        b = c;
+        var x = 5;
+    }
+    f(a, b, c);
+    console.log(b);
+    var x = 10;
 }
-main();
-console.log("<br>x7 is " + x);
+c(8, 9, 10);
+console.log(b);
+console.log(x);
 

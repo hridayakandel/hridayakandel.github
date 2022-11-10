@@ -14,11 +14,17 @@ window.onload = function () {
         const password = document.getElementById("password");
         const websiteURL = document.getElementById("websiteURL");
         const checkbox = document.getElementById("checkbox");
-        // console.log(checkbox);
+        console.log(checkbox);
         console.log(`Email : ${email.value}`);
-        console.log(`password : ${password.value}`);
-        console.log(`website URL : ${websiteURL.value}`);
-        console.log(`checkbox : ${checkbox.value}`);
+        console.log(`Password : ${password.value}`);
+        console.log(`Website URL : ${websiteURL.value}`);
+        console.log(`Checkbox : ${checkbox.value}`);
+        document.getElementById("displayEmail").innerText = `Email : ${email.value}`;
+        document.getElementById("displayEmail").style.color = "blue";
+        document.getElementById("displayPaswd").innerText = `Password : ${password.value}`;
+        document.getElementById("displayPaswd").className = 'pasWord';
+        document.getElementById("displayURL").innerText = `Website URL : ${websiteURL.value}`;
+
         email.value = "";
         password.value = "";
         websiteURL.value = "";
