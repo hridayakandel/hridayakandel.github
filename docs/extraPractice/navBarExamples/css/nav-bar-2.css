@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+   
 }
 
 li,a,button{
@@ -19,7 +19,7 @@ header {
     display: flex;
     /* for header content and items to be flex type  */
     /* justify-content: space-between;  */
-    justify-content: flex-end;
+    justify-content: flex-start;
     /* properties of flex */
     /* Aligns flex items along the main axis of the current line of the flex container. */
     align-items: center;
@@ -31,7 +31,7 @@ header {
     height: 50px;
     width: 50px;
     cursor: pointer;
-    margin-right: auto;
+  /* margin-right: auto; */
 }
 nav{
     /* margin-left: auto; */
@@ -41,6 +41,7 @@ nav{
     display: inline-block;
     padding: 0 20px 0 20px;
     border-left: 2px solid goldenrod;
+    background-color: wheat;
     /* margin-right: auto; */
 }
 
@@ -60,12 +61,18 @@ button {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    margin-left: 20px;
+    margin-right: auto;
+}
+.contact{
+    margin-left: auto;
 }
 
 button:hover {
     background-color: gold;
     
+}
+.nav-bar{
+    background-color: wheat;
 }
 
 
