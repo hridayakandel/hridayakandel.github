@@ -15,3 +15,23 @@ persons.forEach(a => console.log(a.toString()));
 
 const employee = new Employee("Jim Hanson", null, "245,990.00", null);
 employee.doJob("Software Engineer");
+
+// testing the moduel access for the private varible
+
+// console.log("========================")
+// const nameModule = (function () {
+//     const fname = {
+//         fname: "Hridaya",
+//         getName: function () { return this.fname }
+//     }
+//     const privateFunction = function () {
+//         return fname.getName();
+//     }
+//     const publicFunction = function () {
+//         return privateFunction();
+//     }
+//     return {
+//         publicFunction: publicFunction
+//     }
+// }());
+// console.log(nameModule.publicFunction());
