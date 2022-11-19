@@ -104,16 +104,16 @@ window.onload = function () {
 
         htmlWrite(patientArr, tbodyPatientsList);
 
-        // patientIdNumber.value = "";
-        // firstName.value = "";
-        // middleInitials.value = "";
-        // lastName.value = "";
-        // dateOfBirth.value = "";
-        // ddlDepartment.value = "";
-        // patientOut.value = "";
-
-        console.log(patientArr);
-        console.log("hello")
+        patientIdNumber.value = "";
+        firstName.value = "";
+        middleInitials.value = "";
+        lastName.value = "";
+        dateOfBirth.value = "";
+        ddlDepartment.value = "";
+        patientOut.value = "";
+        patientIdNumber.focus();
+        // console.log(patientArr);
+        // console.log("hello");
     };
 
 
