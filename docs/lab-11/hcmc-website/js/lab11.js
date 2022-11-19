@@ -122,7 +122,7 @@ window.onload = function () {
 
         console.log(chkElderlyPatients.checked);
         if (chkElderlyPatients.checked) {
-            const patient65 = patientArr.filter(patient => patient.age < 65);
+            const patient65 = patientArr.filter(patient => patient.age >= 65);
 
             // console.log(patient65);
             // console.log(patientArr[0].age);
@@ -134,7 +134,17 @@ window.onload = function () {
     });
     //show out patient event 
     chkShowOutPatients.addEventListener('change', function (event) {
-        console.log(chkShowOutPatients.checked);
+        if (chkShowOutPatients.checked) {
+            const outPatients = patientArr.filter(patient => patient.patientOut == 'Yes');
+
+            // console.log(patient65);
+            // console.log(patientArr[0].age);
+            htmlWrite(outPatients, tbodyPatientsList);
+        }
+        else {
+            htmlWrite(patientArr, tbodyPatientsList);
+        }
+
     });
 
 
