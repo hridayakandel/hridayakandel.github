@@ -8,6 +8,19 @@ window.onload = function () {
     const censusForm = document.getElementById("patientForm");
     patientForm.onsubmit = function (event) {
         event.preventDefault();
+
+        let patientArr = new [];
+        const patient = {
+            patientIdNumber: '',
+            firstName: '',
+            middleInitials: '',
+            lastName: '',
+            dateOfBirth: '',
+            ddlDepartment: '',
+            patientOut: ''
+        }
+
+
         const patientIdNumber = document.getElementById('patientIdNumber');
         const firstName = document.getElementById('firstName');
         const middleInitials = document.getElementById('middleInitials');
@@ -34,6 +47,7 @@ window.onload = function () {
         // Department:${txtddlDepartment}
         // Is Patient Out: ${txtpatientOut}
         // `;
+
 
         const tbodyPatientsList = document.getElementById('tbodyPatientsList');
         tbodyPatientsList.innerHTML = `
