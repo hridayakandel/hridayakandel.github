@@ -4,14 +4,59 @@
  * @since 19 Nov 2022
  */
 //console.log("test");
+"use strict";
 window.onload = function () {
     const patientForm = document.getElementById("patientForm");
+    const chkElderlyPatients = document.getElementById("chkElderlyPatients");
+    const chkShowOutPatients = document.getElementById("chkShowOutPatients");
+
+    const tbodyPatientsList = document.getElementById('tbodyPatientsList');
+    function clearHtml() {
+        tbodyPatientsList.innerHTML = "";
+    }
+
+
     let patientArr = new Array();
+
+    //get age function 
+    function getAge(dateOfBirth) {
+        var today = new Date();
+        var birthDate = new Date(dateOfBirth);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    //write to HTML function 
+    const htmlWrite = function (patientArr, tbodyPatientsList) {
+        console.log("patient inside loop ", patientArr);
+        clearHtml();
+        for (let index = 0; index < patientArr.length; index++) {
+            let element = patientArr[index];
+            console.log(index);
+            console.log(element.patientIdNumber);
+            tbodyPatientsList.innerHTML += `
+                                        <tr>
+                                            <td scope="col">${element.patientIdNumber}</td>
+                                            <td scope="col">${element.firstName}</td>
+                                            <td scope="col">${element.middleInitials}</td>
+                                            <td scope="col">${element.lastName}</td>
+                                            <td scope="col">${element.dateOfBirth}</td>
+                                            <td scope="col">${element.ddlDepartment}</td>
+                                            <td scope="col">${element.patientOut}</td>
+                                        </tr>
+                                        `;
+        };
+    }
+
+    //=========================== Events =====================================
+    //form event 
     patientForm.onsubmit = function (event) {
         console.log(patientArr)
         event.preventDefault();
-
-
 
         //TODO using object literals 
 
@@ -30,6 +75,7 @@ window.onload = function () {
         const txtdateOfBirth = dateOfBirth.value;
         const txtddlDepartment = ddlDepartment.value;
         const txtpatientOut = patientOut.value;
+        const textAge = getAge(dateOfBirth.value);
 
 
         // result = `
@@ -42,8 +88,6 @@ window.onload = function () {
         // Is Patient Out: ${txtpatientOut}
         // `;
 
-
-
         const patient = {
             patientIdNumber: txtpatientIdNumber,
             firstName: txtfirstName,
@@ -51,36 +95,48 @@ window.onload = function () {
             lastName: txtlastName,
             dateOfBirth: txtdateOfBirth,
             ddlDepartment: txtddlDepartment,
-            patientOut: txtpatientOut
+            patientOut: txtpatientOut,
+            age: textAge
         }
         patientArr.push(patient);
 
         //TODO using object literals 
 
-        const tbodyPatientsList = document.getElementById('tbodyPatientsList');
-        tbodyPatientsList.innerHTML = `
-         <tr>
-            <td scope="col">${txtpatientIdNumber}</td>
-            <td scope="col">${txtfirstName}</td>
-            <td scope="col">${txtmiddleInitials}</td>
-            <td scope="col">${txtlastName}</td>
-            <td scope="col">${txtdateOfBirth}</td>
-            <td scope="col">${txtddlDepartment}</td>
-            <td scope="col">${txtpatientOut}</td>
-        </tr>
-        `;
+        htmlWrite(patientArr, tbodyPatientsList);
 
-        patientIdNumber.value = "";
-        firstName.value = "";
-        middleInitials.value = "";
-        lastName.value = "";
-        dateOfBirth.value = "";
-        ddlDepartment.value = "";
-        patientOut.value = "";
+        // patientIdNumber.value = "";
+        // firstName.value = "";
+        // middleInitials.value = "";
+        // lastName.value = "";
+        // dateOfBirth.value = "";
+        // ddlDepartment.value = "";
+        // patientOut.value = "";
 
-        console.log(patient);
+        console.log(patientArr);
         console.log("hello")
     };
+
+
+    // checked elderly patient event
+    chkElderlyPatients.addEventListener('change', function (event) {
+
+        console.log(chkElderlyPatients.checked);
+        if (chkElderlyPatients.checked) {
+            const patient65 = patientArr.filter(patient => patient.age < 65);
+
+            // console.log(patient65);
+            // console.log(patientArr[0].age);
+            htmlWrite(patient65, tbodyPatientsList);
+        }
+        else {
+            htmlWrite(patientArr, tbodyPatientsList);
+        }
+    });
+    //show out patient event 
+    chkShowOutPatients.addEventListener('change', function (event) {
+        console.log(chkShowOutPatients.checked);
+    });
+
 
 };
 
