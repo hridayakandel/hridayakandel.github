@@ -5,21 +5,15 @@
  */
 //console.log("test");
 window.onload = function () {
-    const censusForm = document.getElementById("patientForm");
+    const patientForm = document.getElementById("patientForm");
+    let patientArr = new Array();
     patientForm.onsubmit = function (event) {
+        console.log(patientArr)
         event.preventDefault();
 
-        let patientArr = new [];
-        const patient = {
-            patientIdNumber: '',
-            firstName: '',
-            middleInitials: '',
-            lastName: '',
-            dateOfBirth: '',
-            ddlDepartment: '',
-            patientOut: ''
-        }
 
+
+        //TODO using object literals 
 
         const patientIdNumber = document.getElementById('patientIdNumber');
         const firstName = document.getElementById('firstName');
@@ -49,6 +43,20 @@ window.onload = function () {
         // `;
 
 
+
+        const patient = {
+            patientIdNumber: txtpatientIdNumber,
+            firstName: txtfirstName,
+            middleInitials: txtmiddleInitials,
+            lastName: txtlastName,
+            dateOfBirth: txtdateOfBirth,
+            ddlDepartment: txtddlDepartment,
+            patientOut: txtpatientOut
+        }
+        patientArr.push(patient);
+
+        //TODO using object literals 
+
         const tbodyPatientsList = document.getElementById('tbodyPatientsList');
         tbodyPatientsList.innerHTML = `
          <tr>
@@ -69,7 +77,11 @@ window.onload = function () {
         dateOfBirth.value = "";
         ddlDepartment.value = "";
         patientOut.value = "";
+
+        console.log(patient);
+        console.log("hello")
     };
+
 };
 
 
